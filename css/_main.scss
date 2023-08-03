@@ -1,0 +1,7 @@
+.main {
+    background: $anti-text-color;
+    padding-top: 125px;
+        @media (max-width: 768px) {
+            padding-top: 100px;
+            }
+}

@@ -1,0 +1,158 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    color: $text-color;
+    background: $anti-text-color;
+
+    @media (max-width: 560px) {
+        font-size: 14px;
+    }
+}
+
+h1 {
+    font-family: inherit;
+    font-size: 50px;
+    font-weight: 500;
+    color: $text-color-add;
+
+    @media (max-width: 1024px) {
+        font-size: 45px;
+    }
+
+    @media (max-width: 560px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 30px;
+    }
+}
+
+h2 {
+    font-family: inherit;
+    font-size: 40px;
+    font-weight: 500;
+    color: inherit;
+
+    @media (max-width: 1024px) {
+        font-size: 35px;
+    }
+
+    @media (max-width: 560px) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 25px;
+    }
+}
+
+h3 {
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: 500;
+    color: inherit;
+
+    @media (max-width: 1024px) {
+        font-size: 25px;
+    }
+
+    @media (max-width: 560px) {
+        font-size: 23px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 20px;
+    }
+}
+
+h4 {
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    color: inherit;
+}
+
+h5 {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    color: $text-color-add;
+}
+
+a {
+    color: $main-color;
+    cursor: pointer;
+
+    &:hover {
+        color: $main-hover-color;
+    }
+}
+
+.button {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: $main-color;
+    color: $anti-text-color;
+    padding: 19px 23px;
+    border-radius: 50px;
+    min-width: 180px;
+    word-spacing: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        background-color: $main-hover-color;
+    }
+
+    &.button-white {
+        background: $anti-text-color;
+        color: $main-color;
+
+        &:hover {
+            color: $main-hover-color;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        &:active {
+            color: $text-color;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            // box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35) inset;
+            // box-shadow: inset 3px 0px 7px rgba(0, 0, 0, 0.35);
+            // box-shadow: inset 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+        }
+    }
+}
+
+[class*="__container"] {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 0 auto;
+    max-width: 1570px;
+    height: 100%;
+}
+
+p {
+    padding: 20px 0 33px;
+    line-height: 25px;
+}
+
+.nowrap {
+    white-space: nowrap;
+
+    @media (max-width: 560px) {
+        white-space: normal;
+    }
+}
+
+.img-wrap {
+    max-width: 520px;
+    & img {
+        width: 100%;
+    }
+}

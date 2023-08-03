@@ -1,0 +1,26 @@
+.nav-panel {
+    height: 60px;
+    background: $nav-panel-color;
+    &__container{
+        display: flex;
+        align-items: center;
+        overflow-y: auto;
+    }
+    &__menu{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        & a {
+            font-size: 13px;
+            color: $comment-color;
+            text-decoration: underline;
+            &._active{
+                text-decoration: none;
+            }
+            &:hover{
+                color: $text-color-add;
+                text-decoration: none;
+            }
+        }
+    }
+}

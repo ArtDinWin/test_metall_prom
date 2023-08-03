@@ -1,0 +1,232 @@
+.products {
+    background: $nav-panel-color;
+    color: inherit;
+    padding: 120px 0 calc(120px + 85px) 0;
+    box-sizing: content-box;
+
+    @media (max-width: 560px) {
+        padding: 50px 0 calc(50px + 85px) 0;
+    }
+
+    & .footer__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 55px;
+    }
+
+    &__block {
+        &-title {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            @media (max-width: 420px) {
+                text-align: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+        &-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            & .card:last-child {
+                @media (max-width: 1920px) {
+                    display: none;
+                }
+            }
+
+            & .card:nth-child(4) {
+                @media (max-width: 1280px) {
+                    display: none;
+                }
+            }
+
+            & .card:nth-child(3) {
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
+
+            & .card:nth-child(2) {
+                @media (max-width: 560px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__block-nav {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+    }
+}
+
+.arrow {
+    height: 50px;
+    width: 50px;
+    background: $anti-text-color;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.2);
+
+        & svg {
+            fill: $main-hover-color;
+        }
+    }
+
+    & svg {
+        fill: $comment-color;
+    }
+
+    &_left {
+        transform: rotate(180deg);
+    }
+
+    &_up {
+        transform: rotate(270deg);
+    }
+
+    &_down {
+        transform: rotate(90deg);
+    }
+
+    &._active {
+        & svg {
+            fill: $text-color-add;
+        }
+
+        &:hover {
+            & svg {
+                fill: $main-hover-color;
+            }
+        }
+    }
+}
+
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 20px 20px 45px;
+    background: $anti-text-color;
+
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    position: relative;
+    cursor: pointer;
+
+    & h5.card__title {
+        text-align: center;
+        color: $text-color;
+        flex: 1 1 auto;
+
+        &:not(:last-child) {
+            padding-bottom: 33px;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &__price {
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        color: $text-color;
+
+        &.card__price_new {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        &.card__price_old {
+            font-size: 20px;
+            font-weight: 500;
+            color: $comment-color;
+            position: relative;
+            margin-right: 7px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 2px;
+                background: $comment-color;
+                top: 50%;
+                left: -6px;
+                width: calc(100% + 12px);
+            }
+        }
+    }
+
+    & img {
+        margin-bottom: 17px;        
+                width: 100%;
+         
+    }
+}
+
+.category {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 8px;
+    background: $comment-color;
+    color: $anti-text-color;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &._hit {
+        background: $hit-color;
+
+        & .category__marker {
+            border-left: 8px solid $hit-color;
+        }
+    }
+
+    &._sale {
+        background: $main-color;
+
+        & .category__marker {
+            border-left: 8px solid $main-color;
+        }
+    }
+
+    &._new {
+        background: $new-color;
+
+        & .category__marker {
+            border-left: 8px solid $new-color;
+        }
+    }
+
+    &__marker {
+        border: 15px solid transparent;
+        border-left: 8px solid $comment-color;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+}
